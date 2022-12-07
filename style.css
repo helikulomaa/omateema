@@ -2,3 +2,194 @@
 Theme name: Oma teema
 Theme author: Heli Kulomaa
 */
+
+body {
+    margin: 0;
+}
+
+#site-container {
+    margin: 0;
+}
+
+#site-header {
+    background: url('tausta.jpg');
+    background-position: 40% 0%;
+    padding-top: 25rem;
+    padding-left: 16rem;
+    text-align: left;
+    font-family: 'Gloria Hallelujah', sans-serif;
+}
+
+#site-header h1 {
+    color: #302628;
+    font-size: 3.5em;
+    margin: 0;
+    padding-bottom: 1rem;
+}
+
+#top-navi {
+    background-color: whitesmoke;
+}
+
+#top-navi ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+#top-navi ul li {
+    position: relative; /*Tämä määritys vaikuttaa siihen, että alavalikko toimii*/
+}
+
+#top-navi > div > ul > li:first-child {
+    display: none;
+}
+
+#top-navi ul li a {
+    text-decoration: none;
+    color: #0d1a00;
+    font-weight: bold;
+    display: block;
+    padding: 10px 20px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.9rem;
+}
+
+#top-navi ul li a:hover {
+    text-decoration: none;
+    color: #336600;
+    background-color: #adc8ad;
+    font-weight: bold;
+    display: block;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+#top-navi .sub-menu {
+    position: absolute;
+    top: 100%; /*suoraan ylävalikon alle*/
+    left: 0; /*ei yhtään tilaa vasenpaan reunaan*/
+    z-index: 1; /*pudotusvalikko tulee asioiden päälle */
+    display: none; /*jotta on alkuun piilossa*/
+    padding-top: 2px;
+}
+
+#top-navi ul li:hover .sub-menu {
+    display: block;
+}
+
+#top-navi .sub-menu li {
+    background-color: #889e88;
+    display: block;
+    width: 100%;
+}
+
+#top-navi ul li.current-menu-item > a,
+#top-navi ul li.current-category-parent > a,
+#top-navi ul li.current-post-ancestor > a {
+    background-color: #889e88;
+}
+
+#content main {
+    width: 100%;
+    padding: 15px;
+}
+
+#content main article {
+    border-bottom: 1px dashed gray;
+    margin-bottom: 10px;
+}
+
+#content main article:last-child {
+    border-bottom: none;
+}
+
+#content main a {
+    text-decoration: none;
+    color: #3a433a;
+    font-weight: bold;
+}
+
+#content main h1 a, #content main h2 a {
+    text-decoration: none;
+    color: #000000; 
+}
+
+#content main h2 {
+    margin: 0;
+}
+
+#content main .date-category, #content #newsest .date {
+    color: gray;
+    margin-top: 0;
+}
+
+#content #newest {
+    display: flex;
+}
+
+#content #newest .post {
+    width: 33,33%;
+    padding: 10px;
+}
+
+#recipe-box {
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+
+#recipe-box section {
+    width: 33,33%;
+    margin-right: 10px;
+}
+
+#recipe-box section:nth-child(3) {
+    padding-right: 0;
+}
+
+#site-footer {
+    background-color: #889e88;
+    padding: 2rem;
+    text-align: center;
+}
+
+@media only screen and (max-width: 950px) {
+    #content #newest {
+        display: block;
+    }
+    #content #newest .post {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    #content {
+        display: block;
+    }
+
+    #content main {
+        width: 100%;
+    }
+
+    #top-navi > div > ul > li:first-child {
+        display: block;
+    }
+
+    #top-navi ul {
+        display: block;
+    }
+
+    #top-navi .sub-menu {
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+        font-size: 0.8em;
+    }
+
+    #top-navi > div > ul > li:not(:first-child) {
+        display: none;
+    }
+}
